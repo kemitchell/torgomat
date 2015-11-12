@@ -8,6 +8,4 @@ module.exports = React.createClass({
     constants: React.PropTypes.object,
     template: React.PropTypes.object },
   render: function() {
-    return React.DOM.div({}, ['hello there'])
-  }
-})
+    return React.DOM.div(null, [ 'Torgomat' ]) } })

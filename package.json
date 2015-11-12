@@ -8,13 +8,16 @@
     "ecstatic": "^1.2.0",
     "function-bind": "^1.0.2",
     "phantomjs": "^1.9.18",
+    "react-dom": "^0.14.2",
     "tape": "^4.2.2",
+    "watchify": "^3.6.0",
     "webdriverio": "^3.2.6"
   },
   "scripts": {
-    "build": "browserify test.js > public/browser.js",
-    "start": "ecstatic public",
+    "build": "browserify test/harness.js > public/browser.js",
     "phantom": "phantomjs --local-to-remote-url-access=yes --ignore-ssl-errors=yes --ssl-protocol=any --webdriver=4444",
-    "test": "tape test/*.test.js"
+    "start": "ecstatic --cache 0 public",
+    "test": "tape test/*.test.js",
+    "watch": "watchify test/harness.js -o public/browser.js -dv"
   }
 }

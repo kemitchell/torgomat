@@ -3,5 +3,7 @@ require('tape')('Sanity Check', function(test) {
   require('./driver')()
     .getTitle()
     .then(function(title) {
-      test.equal(title, 'Torgomat Test') })
+      test.equal(
+        title, 'Torgomat Test',
+        'page has title') })
     .end() })
