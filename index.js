@@ -1,11 +1,15 @@
 var React = require('react')
 
+var Choices = require('./choices')
+
 module.exports = React.createClass({
   displayName: 'Torgomat',
   propTypes: {
-    choices: React.PropTypes.array,
-    consequences: React.PropTypes.array,
-    constants: React.PropTypes.object,
-    template: React.PropTypes.object },
+    choices: React.PropTypes.array },
   render: function() {
-    return React.DOM.div(null, [ 'Torgomat' ]) } })
+    return React.DOM.div(
+      { className: 'Torgomat' },
+      [ React.createElement(
+          Choices,
+          { choices: this.props.choices }),
+        React.DOM.p(null, 'Torgomat') ]) } })

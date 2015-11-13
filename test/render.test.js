@@ -3,7 +3,9 @@ require('tape')('Render Component', function(test) {
   require('./driver')()
     .execute(function() {
       window.ReactDOM.render(
-        window.React.createElement(window.Torgomat),
+        window.React.createElement(
+          window.Torgomat,
+          { choices: [ ] }),
         document.getElementsByClassName('container')[0]) })
     .then()
     .isExisting('//*[contains(text(),"Torgomat")]')
